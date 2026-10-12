@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نامه برای آب هویج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;600&family=Katibeh&display=swap">
+<style>
+  /* Layout: a midnight room with drifting hearts; one glass-like letter card in the center, glowing rose edge, big calligraphic opening, carrot-to-rose signature. Deliberately single dark theme. */
+  :root {
+    color-scheme: dark;
+    --night: #12060d;
+    --wine: #3a0d24;
+    --card: rgba(34, 12, 26, .72);
+    --ink: #fbe9ef;
+    --muted: #c99aae;
+    --rose: #ff4d79;
+    --carrot: #ff8a3d;
+    --blush: #ffc2d1;
+    --font-body: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+    --font-hand: "Katibeh", "Vazirmatn", Tahoma, serif;
+  }
+  html, body { min-height: 100%; }
+  body {
+    background:
+      radial-gradient(60rem 40rem at 80% -10%, #5a1233 0%, transparent 60%),
+      radial-gradient(50rem 36rem at 0% 110%, #4a1a12 0%, transparent 60%),
+      var(--night);
+    color: var(--ink);
+    font-family: var(--font-body);
+    direction: rtl;
+    padding-inline: 16px;
+    padding-block: 6vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  #hearts { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .wrap { position: relative; width: 100%; max-width: 35rem; min-width: 0; align-self: flex-start; }
+  .glow {
+    position: absolute; inset: -1px; border-radius: 22px;
+    background: linear-gradient(160deg, var(--rose), transparent 40%, var(--carrot) 100%);
+    filter: blur(14px); opacity: .35;
+  }
+  .sheet {
+    position: relative;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 140, 170, .28);
+    border-radius: 20px;
+    padding: clamp(2.2rem, 9vw, 3.8rem) clamp(1.5rem, 7vw, 3.2rem) clamp(1.8rem, 7vw, 2.8rem);
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+  .beat {
+    align-self: center; width: 3.2rem; height: 3.2rem; display: block;
+    filter: drop-shadow(0 0 14px rgba(255, 77, 121, .7));
+    animation: beat 1.6s ease-in-out infinite;
+  }
+  .lines { display: flex; flex-direction: column; gap: 1.2rem; text-align: center; }
+  p { margin: 0; font-size: 1.15rem; line-height: 2.15; font-weight: 300; text-wrap: pretty; color: var(--ink); }
+  p.open {
+    font-family: var(--font-hand); font-size: clamp(2.2rem, 9vw, 3rem); line-height: 1.5; font-weight: 400;
+    background: linear-gradient(90deg, var(--blush), var(--rose));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-wrap: balance;
+  }
+  p.turn { color: var(--blush); font-weight: 600; font-size: 1.05rem; padding-top: .4rem; }
+  .divider { display: flex; align-items: center; gap: .8rem; color: var(--rose); }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 140, 170, .5), transparent); }
+  .sign { text-align: center; display: flex; flex-direction: column; gap: .1rem; }
+  .sign .love { font-size: 1.1rem; color: var(--muted); font-weight: 300; }
+  .sign .name {
+    font-family: var(--font-hand); font-size: clamp(3rem, 14vw, 4.2rem); line-height: 1.3;
+    background: linear-gradient(90deg, var(--carrot), var(--rose));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 18px rgba(255, 106, 90, .35));
+  }
+  .hint { text-align: center; font-size: .8rem; color: var(--muted); opacity: .7; font-weight: 200; margin-top: 1rem; }
+  .rise { animation: rise 1s ease-out both; }
+  .lines .rise:nth-child(2) { animation-delay: .25s; }
+  .lines .rise:nth-child(3) { animation-delay: .5s; }
+  .divider.rise { animation-delay: .65s; }
+  .sign.rise { animation-delay: .8s; }
+  @keyframes rise { from { opacity: .1; transform: translateY(.7rem); } to { opacity: 1; transform: none; } }
+  @keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
+  @media (prefers-reduced-motion: reduce) { .rise, .beat { animation: none; } }
+</style>
+
+<canvas id="hearts" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <div class="glow" aria-hidden="true"></div>
+  <article class="sheet">
+    <svg class="beat" viewBox="0 0 24 24" aria-hidden="true">
+      <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ff4d79"/></linearGradient></defs>
+      <path fill="url(#hg)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.7 5 6 5c2 0 3.4 1.1 4.2 2.4h3.6C14.6 6.1 16 5 18 5c3.3 0 5.1 3.4 3.6 6.8C19.5 16.4 12 21 12 21z"/>
+    </svg>
+    <div class="lines">
+      <p class="open rise">ببخش که دلت رو ناراحت کردم…</p>
+      <p class="rise">کاش می‌دونستم چطور جلوی ناراحتیت رو بگیرم،<br>قبل از اینکه خودم دلیلش بشم. 🤍</p>
+      <p class="turn rise">تو خیلی چیزا بدم، مثل معذرت خواهی.<br>ولی خب ازت معذرت میخوام</p>
+    </div>
+    <div class="divider rise" aria-hidden="true">♥</div>
+    <div class="sign rise">
+      <span class="love">دوستت دارم ❤️</span>
+      <span class="name">اب هویج</span>
+    </div>
+  </article>
+  <div class="hint">یه جایی از صفحه رو لمس کن</div>
+</main>
+
+<script>
+(function () {
+  var cv = document.getElementById('hearts');
+  var ctx = cv.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0, items = [];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heart = new Path2D('M0 .9C-2.6-.9-2.3-3 -1.1-3.1c.9 0 1.4.6 1.1 1.3C.3-2.5.9-3.1 1.7-3.1 2.9-3 3.1-.9 0 .9z');
+  var cols = ['#ff4d79', '#ff8a3d', '#ffc2d1', '#ff6a5a'];
+
+  function size() {
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function spawn(x, y, burst) {
+    var s = burst ? 5 + Math.random() * 6 : 3 + Math.random() * 6;
+    items.push({
+      x: x, y: y, s: s,
+      vx: burst ? (Math.random() - .5) * 2.4 : (Math.random() - .5) * .4,
+      vy: burst ? -1.2 - Math.random() * 1.8 : -.3 - Math.random() * .6,
+      a: burst ? .95 : .15 + Math.random() * .35,
+      life: burst ? 1 : 0, c: cols[(Math.random() * cols.length) | 0],
+      r: (Math.random() - .5) * .6, burst: burst
+    });
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduce && items.length < 26 && Math.random() < .08) spawn(Math.random() * W, H + 20, false);
+    for (var i = items.length - 1; i >= 0; i--) {
+      var h = items[i];
+      h.x += h.vx; h.y += h.vy;
+      if (h.burst) { h.a -= .012; h.vy += .02; }
+      if (h.y < -30 || h.a <= 0) { items.splice(i, 1); continue; }
+      ctx.save();
+      ctx.translate(h.x + Math.sin(h.y / 40) * (h.burst ? 0 : 10), h.y);
+      ctx.rotate(h.r); ctx.scale(h.s, h.s);
+      ctx.globalAlpha = h.a; ctx.fillStyle = h.c; ctx.fill(heart);
+      ctx.restore();
+    }
+    requestAnimationFrame(frame);
+  }
+  size();
+  window.addEventListener('resize', size);
+  for (var k = 0; k < 10; k++) spawn(Math.random() * W, Math.random() * H, false);
+  function tap(e) {
+    for (var n = 0; n < 9; n++) spawn(e.clientX, e.clientY, true);
+  }
+  document.addEventListener('pointerdown', tap);
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
